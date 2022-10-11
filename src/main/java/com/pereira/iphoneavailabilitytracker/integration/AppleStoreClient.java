@@ -54,14 +54,13 @@ public class AppleStoreClient {
 
     @Data
     static class PartAvailability {
-        private static final String IN_STORE_PICKUP = "In-Store Pickup";
         private static final String AVAILABLE = "available";
 
         private String pickupType;
         private String pickupDisplay;
 
         public boolean isAvailable() {
-            return pickupType.equals(IN_STORE_PICKUP) && pickupDisplay.equals(AVAILABLE);
+            return pickupDisplay.equals(AVAILABLE);
         }
     }
 
