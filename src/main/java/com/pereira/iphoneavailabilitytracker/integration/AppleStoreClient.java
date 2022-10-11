@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AppleStoreClient {
 
-    private static final String URL_TEMPLATE = "https://www.apple.com/shop/fulfillment-messages?cppart={carrier}&parts.0={model}&location={location}";
+    private static final String URL_TEMPLATE = "https://www.apple.com/shop/fulfillment-messages?pl=true&cppart={carrier}&parts.0={model}&location={location}";
 
     private final RestTemplate restTemplate;
 

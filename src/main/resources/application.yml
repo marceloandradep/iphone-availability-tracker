@@ -1,6 +1,8 @@
 app:
   location: 98107
   check-rate: 10000
+  notification:
+    enabled: false
 
 spring:
   mail:

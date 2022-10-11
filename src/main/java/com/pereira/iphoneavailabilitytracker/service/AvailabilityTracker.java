@@ -11,7 +11,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +23,9 @@ public class AvailabilityTracker {
 
     @Value("${app.location}")
     private String location;
+
+    @Value("${app.notification.enabled}")
+    private boolean isNotificationEnabled;
 
     @Scheduled(fixedRateString = "${app.check-rate}")
     public void track() {
@@ -38,7 +40,9 @@ public class AvailabilityTracker {
 
         log.info("Available models: [{}]", availabilityList);
 
-        notificationService.sendNotification(availabilityList);
+        if (isNotificationEnabled) {
+            notificationService.sendNotification(availabilityList);
+        }
     }
 
 }
