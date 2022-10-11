@@ -1,0 +1,13 @@
+app:
+  location: 98107
+  check-rate: 10000
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${smtp.user}
+    password: ${smtp.password}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
